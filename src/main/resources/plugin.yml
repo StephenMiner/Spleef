@@ -1,0 +1,14 @@
+name: Spleef
+version: '${project.version}'
+main: me.stephenminer.spleef.Spleef
+api-version: 1.20
+commands:
+  spleefwand:
+    permission: spleef.commands.wand
+  spleef:
+  spleefRegion:
+  spleefReroute:
+    permission: spleef.commands.reroute
+  layerWand:
+  killWand:
+  forceSpleef:
