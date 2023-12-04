@@ -24,8 +24,15 @@ public class KillZone {
 
     private boolean active;
     public KillZone(Location loc1, Location loc2){
-        this(loc1,loc2,Material.COBWEB);
+        this(loc1,loc2,Material.AIR);
     }
+
+    /**
+     *
+     * @param loc1
+     * @param loc2
+     * @param mat
+     */
     public KillZone(Location loc1, Location loc2,Material mat){
         this.mat = mat;
         this.plugin = JavaPlugin.getPlugin(Spleef.class);
@@ -36,7 +43,9 @@ public class KillZone {
     }
 
 
-
+    /**
+     *
+     */
     public void activate(){
         active = true;
         construir();
@@ -57,6 +66,9 @@ public class KillZone {
         }.runTaskTimer(plugin,1,1);
     }
 
+    /**
+     *
+     */
     public void construir(){
         int minX = Math.min(loc1.getBlockX(),loc2.getBlockX());
         int minZ = Math.min(loc1.getBlockZ(), loc2.getBlockZ());
@@ -71,7 +83,7 @@ public class KillZone {
                     blocks.add(block.getState());
                     BlockState state = block.getState();
                     state.setType(mat);
-                    state.update(true,false);
+                    state.update(true);
                 }
             }
         }

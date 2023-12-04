@@ -70,7 +70,7 @@ public class ArenaEvents implements Listener {
         if (event.getEntity() instanceof Player player && event.getDamager() instanceof Player damager){
             Arena arenaIn = arenaIn(player);
             if (arenaIn == null) return;
-            if (event.getCause() == EntityDamageEvent.DamageCause.ENTITY_ATTACK){
+            if (event.getCause() != EntityDamageEvent.DamageCause.PROJECTILE){
                 event.setCancelled(true);
             }
         }

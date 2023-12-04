@@ -184,7 +184,7 @@ public class Arena {
     }
 
     public void end(){
-
+        killZone.cancel();
         layers.forEach(GameLayer::construir);
         for (int i = players.size()-1; i >= 0; i--){
             Player player = players.remove(i);
@@ -269,6 +269,7 @@ public class Arena {
         for (int i = players.size()-1; i >= 0; i--){
             removePlayer(players.remove(i));
         }
+
         Arena.arenas.remove(this);
         Arena.BY_IDS.remove(id);
     }

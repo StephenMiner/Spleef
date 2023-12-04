@@ -1,7 +1,5 @@
 package me.stephenminer.spleef.region;
 
-import me.stephenminer.spleef.Items;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
