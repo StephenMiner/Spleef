@@ -84,10 +84,13 @@ public class Arena {
         if (offline.isOnline()){
             Player player = offline.getPlayer();
             player.getInventory().clear();
+            removePotEffect(player);
+            player.getActivePotionEffects().clear();
+            player.removePotionEffect(PotionEffectType.SATURATION);
             players.remove(player);
             player.teleport(plugin.reroute);
             player.setGameMode(GameMode.SURVIVAL);
-            removePotEffect(player);
+
         }
         String msg = ChatColor.GOLD + offline.getName() + " has left the game";
         if (!started) msg += " (" + players.size() + "/" + plugin.minPlayers() + " needed to start)";

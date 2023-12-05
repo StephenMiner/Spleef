@@ -95,7 +95,7 @@ public class SnowballEvents implements Listener {
             Block block = event.getHitBlock();
             Arena.arenas.forEach(arena->{
                 if (arena.isInArena(block.getLocation()) && arena.canInteract(block.getLocation(),player) && block.getType() == Material.SNOW_BLOCK){
-                    block.breakNaturally(null);
+                    block.setType(Material.AIR);
                     event.getEntity().remove();
                 }
             });
